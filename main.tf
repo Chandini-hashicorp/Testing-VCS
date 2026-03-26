@@ -20,5 +20,5 @@ resource "null_resource" "test" {
 resource "time_sleep" "wait_after_each" {
   for_each = null_resource.test
 
-  create_duration = "5m"
+  create_duration = "15s"
 }
