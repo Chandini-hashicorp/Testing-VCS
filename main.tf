@@ -15,6 +15,10 @@ locals {
 
 resource "null_resource" "test" {
   for_each = local.items
+
+  provisioner "local-exec" {
+    command = "echo Creating resource ${each.key}"
+  }
 }
 
 resource "time_sleep" "wait_after_each" {
